@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.2.1 (2026-08-20)
+
+Bugfixes:
+
+- Allow ``mlflow-artifacts:`` URIs as valid source values when importing model versions (skip local filesystem existence checks for this scheme, similar to ``dbfs:``/``s3:``).
+- Fix artifact subpath extraction by matching on ``artifacts/`` and correcting slicing to avoid off-by-one errors that could truncate paths.
+- Normalize artifact/model name extraction in copy/run utilities by consistently using ``artifacts/``.
+- Add open-source tests covering ``mlflow-artifacts:`` sources with and without an artifact subpath.
+
 ## 1.2.0 (2023-02-16)
 
 The 1.2.0 version of MLflow Export Import is a major milestone release.
